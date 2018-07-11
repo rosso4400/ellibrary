@@ -1,0 +1,7 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Title: {{ book.book_title }}</h1>
+
+  <p><strong>Author:</strong> <a href="">{{ book.authors.all() }}</a></p>
+{% endblock %}
