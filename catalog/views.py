@@ -30,14 +30,18 @@ class AuthorListView(LoginRequiredMixin, generic.ListView):
     model = Author
 
 
-class BookUpdate(UpdateView):
+class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Author
+
+
+class BookUpdate(LoginRequiredMixin, UpdateView):
     model = Book
-    fields = ['book_title', 'authors']
+    fields = ['book_title', 'author']
     template_name_suffix = '_update'
 
 
-class BookCreate(CreateView):
+class BookCreate(LoginRequiredMixin, CreateView):
     model = Book
-    fields = ['book_title', 'authors']
+    fields = ['book_title', 'author']
 
 

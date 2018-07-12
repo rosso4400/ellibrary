@@ -1,7 +1,9 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-  <h1>Title: {{ book.book_title }}</h1>
-
-  <p><strong>Author:</strong> <a href="">{{ book.authors.all() }}</a></p>
+  <h1>Title: {{ book.book_title }}
+  <p><strong>Author:</p>
+  {% for author in book.author.all %}
+    <p></strong> <a href="{% url 'author-detail' author.pk %}">{{ author }}</a> </p>
+  {% endfor %}</p></h1>
 {% endblock %}
