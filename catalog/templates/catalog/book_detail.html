@@ -6,4 +6,15 @@
   {% for author in book.author.all %}
     <p></strong> <a href="{% url 'author-detail' author.pk %}">{{ author }}</a> </p>
   {% endfor %}</p></h1>
+
+  <form action="{% url 'book_update' book.pk %}?next={{request.path}}" method="get">
+    {% csrf_token %}
+    <input type="submit" class="btn" value="Edit info">
+  </form> 
+
+  <form action="{% url 'book_delete' book.pk %}?next={{request.path}}" method="get">
+    {% csrf_token %}
+    <input type="submit" class="btn" value="Delete this book">
+  </form> 
+
 {% endblock %}

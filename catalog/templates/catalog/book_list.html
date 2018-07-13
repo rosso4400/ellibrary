@@ -11,6 +11,11 @@
       </li>
       {% endfor %}
 
+      <form action="{% url 'book_create'%}?next={{request.path}}" method="get">
+        {% csrf_token %}
+        <input type="submit" class="btn" value="Add a new book">
+      </form> 
+
     </ul>
     {% else %}
       <p>There are no books in the library.</p>

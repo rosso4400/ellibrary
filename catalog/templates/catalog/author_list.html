@@ -10,7 +10,12 @@
       <li>
         <a href="{{ author.get_absolute_url }}">{{ author.author_name }}</a>
       </li>
-      {% endfor %}
+      {% endfor %}   
+
+      <form action="{% url 'author_create'%}?next={{request.path}}" method="get">
+        {% csrf_token %}
+        <input type="submit" class="btn" value="Add a new author">
+      </form>      
 
     </ul>
     {% else %}
