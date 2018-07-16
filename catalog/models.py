@@ -8,6 +8,12 @@ class Author(models.Model):
     def get_absolute_url(self):
         return reverse('author-detail', args=[str(self.id)])
 
+    #def save(self, *args, **kwargs):
+        #if Author.objects.get(author_name="Lev Tolstoy"): 
+            #return # You cannot add this author because someone else has beat you to it 
+        #else:
+            #super(Author, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.author_name
 
