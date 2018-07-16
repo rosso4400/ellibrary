@@ -79,24 +79,6 @@ class AuthorDelete(LoginRequiredMixin, DeleteView):
     model = Author
     success_url = reverse_lazy('authors')
 
-
-#@login_required
-#def searching(request):
-   # if request.method == 'POST':
-
-       # search_query = request.GET.get('search_box', None)
-        #search_fields = ['author_name']
-        #query = request.GET.get('search_box', None)
-        #results = Author.objects.filter(search_filter(search_fields, query))
-        #return results
-        #results = Author.objects.filter(Q(author_name__icontains=search_query))
-       # return results
-        #Author.objects.filter(author_name__contains=search_query)
-        #Book.objects.filter(book_title__contains=search_query)
-    #return render(
-       # request,
-      #  'search_list.html',
-    #)
             
 
 
