@@ -7,7 +7,6 @@ from django.http import HttpResponseNotFound
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.db.models import Q
-from simple_search import search_filter
 import operator
 
 from .models import Book, Author
